@@ -1,0 +1,38 @@
+{% extends "base_generic.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset="utf-8">
+        <title>Analyze</title>
+    </head>
+
+    <br>
+        {{ object.name}} </br>
+
+        Select which runs to examine: </br>
+    <form>
+        {% for run in runs %}
+            <input type = "checkbox">{{run}}</br>
+        {% endfor %}
+        <button type = "submit">Next</button>
+    </form>
+
+        Select one data file to analyze from the runs:</br>
+
+                     {% csrf_token %}
+    <form>
+        {% for data_file in data_files %}
+            <input type = "radio" name = "choose one">{{data_file}}</br>
+        {% endfor %}
+    </form>
+
+        <form method="get" action="/analysis">
+            <button type="submit">Back</button>
+        </form>
+
+    </ul>
+
+
+
+{% endblock %}

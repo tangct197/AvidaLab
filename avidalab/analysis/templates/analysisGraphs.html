@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+<!-- Add additional CSS in static file -->
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}"> {% block content %}
+<head>
+    <meta charset="utf-8">
+    <title>Analytics</title>
+</head>
+
+<body>
+    We made it here yay! </br>
+
+    <img src={% static 'graphs/scatter_plot.png' %}> </br>
+    <img src={% static 'graphs/histogram.png' %}> </br>
+    <img src={% static 'graphs/line_graph.png' %}> </br>
+    <img src={% static 'graphs/box_and_whisker_plot.png' %}> </br>
+</body>
+{% endblock %}

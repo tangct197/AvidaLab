@@ -1,0 +1,39 @@
+{% extends "base_generic.html" %}
+<!-- Add additional CSS in static file -->
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}"> {% block content %}
+<h1>AvidaLab  - Contact Us</h1>
+  <form method="post">
+    {% csrf_token %}
+    <h3></h3>
+    <fieldset>
+      Name:
+      {{ form.name }}
+      {{ form.name.errors }}
+    </fieldset>
+    <fieldset>
+      Phone:
+      {{ form.phone }}
+      {{ form.phone.errors }}
+    </fieldset>
+    <fieldset>
+      Email:
+      {{ form.email }}
+      {{ form.email.errors }}
+    </fieldset>
+    <fieldset>
+      Subject:
+      {{ form.subject }}
+      {{ form.subject.errors }}
+    </fieldset>
+    <fieldset>
+      Message:
+      {{ form.message }}
+      {{ form.message.errors }}
+    </fieldset>
+    <div class="form-actions">
+      <button type="submit">Send</button>
+    </div>
+  </form>
+
+{% endblock %}
